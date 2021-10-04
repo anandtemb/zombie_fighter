@@ -64,7 +64,7 @@ int main() {
         else {
             if (playerSkill - zombieSkill > 7) {
                 cout << "You wasted the zombie!" << endl;
-                playerScore = playerScore * 2;
+                playerScore = playerScore * 4;
             }
 
             else if (playerSkill - zombieSkill > 5) {
@@ -74,12 +74,14 @@ int main() {
 
             else if (playerSkill - zombieSkill > 0) {
                 cout << "You killed the zombie!" << endl;
-                playerScore = playerScore * 2;
+                playerScore = playerScore * 1;
             }
 
             else {
                 cout << "You killed the zombie, but suffered injuries." << endl;
             }
+            
+            zombiesskill = playerskill -2;
 
             zombiesKilled++;
         }
@@ -93,7 +95,10 @@ int main() {
         // victory
         cout << "You have survived the onslaught!" << endl;
     }
-    else {
+    if (zombiesKilled == 2 && zombiesCount == 4){
+        cout<<"Hello You killed less zombies"<<endl;
+    }
+    if(zombiesKilled == 0 && zombiesCount == 0){
         // lost
         cout << "You did not survive the zombie war." << endl;
     }
